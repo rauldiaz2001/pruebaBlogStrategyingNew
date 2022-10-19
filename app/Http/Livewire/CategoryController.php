@@ -71,7 +71,6 @@ class CategoryController extends Component
 
     public function edit()
     {
-        // if exists save else not save
         // dd(1);
         $this->category->save();
         $this->resetInputs();

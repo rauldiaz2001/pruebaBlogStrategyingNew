@@ -75,8 +75,6 @@ class CrudPost extends Component
         try {
             $this->validate();
             $path = $this->foto->store('pictures', 'public');
-            // $imgPath = $this->post->foto->store('pictures', 'public');
-
             $post = Post::create([
             'titulo' => $this->post->titulo,
             'subtitulo' => $this->post->subtitulo,
@@ -115,11 +113,8 @@ class CrudPost extends Component
 
     public function edit()
     {
-        // if exists save else not save
-        // dd(1);
         if ($this->foto) {
             $path = $this->foto->store('pictures', 'public');
-            // $imgPath = $this->post->foto->store('pictures', 'public');
             $this->post->foto = $path;
         }
         $this->post->save();

@@ -110,9 +110,4 @@ class ShowPosts extends Component
         $this->post = Post::find($id);
         //dd($this->post);
     }
-    // public function delete($id)
-    // {
-    //     Post::find($id)->delete($id);
-    //     session()->flash('message', 'Post Deleted Successfully');
-    // }
 }

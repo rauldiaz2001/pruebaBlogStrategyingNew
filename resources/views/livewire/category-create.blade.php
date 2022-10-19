@@ -41,16 +41,8 @@
                             <label for="slug" class="form-label">Slug</label>
                             <input type="text" wire:model="category.slug" class="form-control" id="slug">
                             @error('category.slug') <span class="error">{{ $message }}</span> @enderror
-
                           </div>
-                          
-                        @if(session()->has('message'))
-                        <div class="alert alert-success">
-                            {{ session()->get('message') }}
-                        </div>
-                    @endif
                           <button type="submit" class="btn btn-primary">Submit</button>
-                         
                           </div>
                         </form>
                       </div>

@@ -76,4 +76,10 @@ window.addEventListener('openModal', ()=> {
     $('#edit').modal('show');
 });
 </script>
+<script>
+  window.addEventListener('closeModal', ()=> {
+    console.log('entra');
+    $('#edit').modal('hide');
+});
+</script>
 @endpush

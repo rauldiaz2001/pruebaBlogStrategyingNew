@@ -60,12 +60,6 @@
                             <input type="text" wire:model="post.name" class="form-control" id="name">
                             @error('post.name') <span class="error">{{ $message }}</span> @enderror
                         </div>
-
-                        @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-@endif
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

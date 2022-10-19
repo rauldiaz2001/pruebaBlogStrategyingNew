@@ -86,7 +86,7 @@ class CrudPost extends Component
             'name' => $this->post->name
             ]);
             $this->resetInputs();
-            return redirect()->with('message', 'POST CREADO CON EXITO!');
+            return redirect()->to('crud/post')->with('message', 'POST CREADO CON EXITO!');
         } catch (Exception $e) {
             dd($e);
         }
@@ -123,8 +123,9 @@ class CrudPost extends Component
             $this->post->foto = $path;
         }
         $this->post->save();
-        return redirect()->with('message', 'POST EDITADO CON EXITO!');
+        $this->dispatchBrowserEvent('closeModal');
         $this->resetInputs();
+        return redirect()->with('message', 'POST EDITADO CON EXITO!');
     }
 
     public function show($id)
@@ -140,6 +141,6 @@ class CrudPost extends Component
     public function resetInputs()
     {
         $this->post = new Post();
-        $this->foto = null;
+        $this->foto = ' ';
     }
 }

@@ -1,7 +1,7 @@
 <div>
   <div class="container">
     <div class="row">
-      <div class="text-right">
+      <div class="text-left">
         <div>
           @include('livewire.category-create')
         </div>
@@ -56,9 +56,9 @@
         </tbody>
         @endforeach
       </table>
-    </div>
-    <div class="d-flex">
-      {{ $categories->links() }}
+      <div class="d-flex">
+        {{ $categories->links() }}
+      </div>
     </div>
   </div>
 </div>

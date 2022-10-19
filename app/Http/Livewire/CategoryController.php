@@ -55,7 +55,8 @@ class CategoryController extends Component
             'nombre_cat' => $this->category->nombre_cat,
             'slug' => $this->category->slug
             ]);
-            return redirect()->with('message', 'CATEGORIA CREADA CON EXITO!');
+            $this->resetInputs();
+            return redirect()->to('/categories')->with('message', 'CATEGORIA CREADA CON EXITO!');
         } catch (Exeption $e) {
             dd($e);
         }
@@ -73,15 +74,15 @@ class CategoryController extends Component
         // if exists save else not save
         // dd(1);
         $this->category->save();
-        return redirect()->with('message', 'CATEGORIA EDITADA CON EXITO!');
         $this->resetInputs();
+        $this->dispatchBrowserEvent('closeModal');
+        return redirect()->with('message', 'CATEGORIA EDITADA CON EXITO!');
     }
 
     public function resetInputs()
     {
         $this->category = new Category();
     }
-
     public function delete($id)
     {
         Category::find($id)->delete($id);

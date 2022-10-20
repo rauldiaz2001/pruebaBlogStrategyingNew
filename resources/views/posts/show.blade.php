@@ -11,20 +11,16 @@
       <div class="text-left">
         <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
       </div>
+      <br><br>
       <div class="col-8">
-        <div>
-          <h1 class="fst-italic" style="text-align:center">{{$posts->titulo}}</h1>
-          <h4>Subtitulo: {{$posts->subtitulo}}</h4>
-          <p>Categoria: {{$posts->categoria_id}}</p>
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">{{$posts->subtitulo}}</h3>
+        <article class="blog-post">
+          <h2 class="blog-post-title">{{$posts->titulo}}</h2>
+          <p class="blog-post-meta">{{$posts->created_at}} by: {{$posts->name}}</p>
+          <hr>
           <p>{{$posts->texto}}</p>
-          <br><br>
           <img height="150px" width="auto" src="{{ Storage::url($posts->foto)}}">
-          <br><br>
-          <p>Creado por: {{$posts->name}}</p>
-          <p>Creado: {{$posts->created_at}}</p>
-          <p>Editado: {{$posts->updated_at}}</p>
-        </div>
-  
+        </article>
       </div>
       <div class="col-4">
         <div class="position-sticky">

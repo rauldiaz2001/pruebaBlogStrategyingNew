@@ -17,11 +17,9 @@
 
       <div class="row">
         @foreach ($posts as $value)
-        <div class="col-12 col-md-4" style="display: flex;
-          align-items: center;
-          justify-content: center;">
+        <div class="col-12 col-md-4 d-flex align-items-stretch" style="justify-content: center;margin-top:40px; margin-bottom:40px;">
           <div class="card" style="width: 18rem;">
-            <img src="{{ Storage::url($value->foto) }}">
+            <img style="max-width:286px; min-width:286px; max-height:200px; min-height:200; border-radius: 1%;"src="{{ Storage::url($value->foto) }}">
             <div class="card-body">
               <h5 class="card-title">{{$value->titulo}}</h5>
               <p class="card-text">{{$value->subtitulo}}</p>
@@ -31,7 +29,6 @@
             </div>
           </div>
         </div>
-        <br>
         @endforeach
       </div>
       <div class="d-flex">

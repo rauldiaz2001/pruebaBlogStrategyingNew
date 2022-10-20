@@ -61,7 +61,7 @@ class ShowPosts extends Component
                      $posts = Post::select('*')->where('titulo', 'like', '%' . $this->query . '%');
         }
         return view('livewire.show-posts', [
-            'posts' => $posts->paginate(2),
+            'posts' => $posts->paginate(6),
             'categories' => $categories,
             'query' => $this->query
         ]);

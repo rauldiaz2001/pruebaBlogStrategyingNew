@@ -12,6 +12,10 @@
         <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
       </div>
       <br><br>
+      <div class="col-12">
+        @livewire('carroussel-post')
+      
+      </div>
       <div class="col-8">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">{{$posts->subtitulo}}</h3>
         <article class="blog-post">
@@ -32,7 +36,7 @@
             <h4 class="fst-italic">Handmade</h4>
             <ul>
               @foreach($categories as $value)
-              <li><a wire:click="">{{$value->nombre_cat}}</a></li>
+              <li><a style="cursor:pointer;" wire:click="categoria">{{$value->nombre_cat}}</a></li>
               @endforeach
             </ul>
           </div>

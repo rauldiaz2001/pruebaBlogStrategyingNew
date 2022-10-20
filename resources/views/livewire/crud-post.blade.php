@@ -82,4 +82,5 @@ window.addEventListener('openModal', ()=> {
     $('#edit').modal('hide');
 });
 </script>
+
 @endpush

@@ -1,20 +1,23 @@
 <div>
   <div class="container">
     <div class="row">
-      <div class="text-left">
-        <input wire:model.lazy="query" type="text" placeholder="Busca un post">
-        <select wire:model="category_id">
-          <option value="">Seleciona una categoria</option>
-          @foreach($categories as $value)
-          <option value="{{$value->id}}">{{$value->nombre_cat}}</option>
-          @endforeach
-        </select>
+      <div class="col-12">
+        <div class="text-left">
+          <input wire:model.lazy="query" type="text" placeholder="Busca un post">
+          <select wire:model="category_id">
+            <option value="">Seleciona una categoria</option>
+            @foreach($categories as $value)
+            <option value="{{$value->id}}">{{$value->nombre_cat}}</option>
+            @endforeach
+          </select>
+        </div>
       </div>
       
+      
 
-      <div>
+      <div class="row">
         @foreach ($posts as $value)
-        <div class="col" style="display: flex;
+        <div class="col-12 col-md-4" style="display: flex;
           align-items: center;
           justify-content: center;">
           <div class="card" style="width: 18rem;">

@@ -28,6 +28,14 @@
             <h4 class="fst-italic">All Categories</h4>
             @livewire('category-list')
           </div>
+          <div class="p-4">
+            <h4 class="fst-italic">Handmade</h4>
+            <ul>
+              @foreach($categories as $value)
+              <li><a wire:click="">{{$value->nombre_cat}}</a></li>
+              @endforeach
+            </ul>
+          </div>
         </div>
       </div>
       
